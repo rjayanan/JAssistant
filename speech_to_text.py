@@ -21,7 +21,12 @@ def SpeakText(command):
      
 # Loop infinitely for user to
 # speak
-MyText = "0"
+
+
+# Have JAss give an intro before asking for inpuit from our users
+intro = "Hello, My name is JAss. I am here to help assist you. To get started, say Hello or ask me something."
+SpeakText(intro)
+MyText = None
 while(MyText != "quit"):   
      
     # Exception handling to handle
@@ -38,7 +43,6 @@ while(MyText != "quit"):
              
             #listens for the user's input
             audio2 = r.listen(source2)
-             
             # Using google to recognize audio
             MyText = r.recognize_google(audio2)
             MyText = MyText.lower()
