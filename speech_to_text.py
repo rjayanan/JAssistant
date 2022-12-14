@@ -26,8 +26,8 @@ def SpeakText(command):
 # Have JAss give an intro before asking for inpuit from our users
 intro = "Hello, My name is JAss. I am here to help assist you. To get started, say Hello or ask me something."
 SpeakText(intro)
-MyText = None
-while(MyText != "quit"):   
+MyText = ""
+while("quit" in MyText):   
      
     # Exception handling to handle
     # exceptions at the runtime
@@ -39,7 +39,7 @@ while(MyText != "quit"):
             # wait for a second to let the recognizer
             # adjust the energy threshold based on
             # the surrounding noise level
-            r.adjust_for_ambient_noise(source2, duration=0.2)
+            r.adjust_for_ambient_noise(source2, duration=0.05)
              
             #listens for the user's input
             audio2 = r.listen(source2)
